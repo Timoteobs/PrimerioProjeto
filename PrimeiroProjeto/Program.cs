@@ -5,25 +5,28 @@ namespace PrimeiroProjeto {
     class Program {
         static void Main(string[] args) {
 
-            double sideXA, sideXB, sideXC, sideYA, sideYB, sideYC;
+            Triangle triangleX, triangleY;
+
+            triangleX = new Triangle();
+            triangleY = new Triangle();
 
             Console.WriteLine("Ente com as medidas do triângulo X: ");
 
-            sideXA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            sideXB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            sideXC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            triangleX.SideA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            triangleX.SideB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            triangleX.SideC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             Console.WriteLine("Ente com as medidas do triângulo Y: ");
 
-            sideYA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            sideYB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            sideYC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            triangleY.SideA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            triangleY.SideB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            triangleY.SideC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double p = (sideXA + sideXB + sideXC) / 2.0;
-            double areaX = Math.Sqrt(p * (p - sideXA) * (p - sideXB) * (p - sideXC));
+            double p = (triangleX.SideA + triangleX.SideB + triangleX.SideC) / 2.0;
+            double areaX = Math.Sqrt(p * (p - triangleX.SideA) * (p - triangleX.SideB) * (p - triangleX.SideC));
 
-            p = (sideYA + sideYB + sideYC) / 2.0;
-            double areaY = Math.Sqrt(p * (p - sideYA) * (p - sideYB) * (p - sideYC));
+            p = (triangleY.SideA + triangleY.SideB + triangleY.SideC) / 2.0;
+            double areaY = Math.Sqrt(p * (p - triangleY.SideA) * (p - triangleY.SideB) * (p - triangleY.SideC));
 
 
             Console.WriteLine("Area de x = " + areaX.ToString("F4", CultureInfo.InvariantCulture));
